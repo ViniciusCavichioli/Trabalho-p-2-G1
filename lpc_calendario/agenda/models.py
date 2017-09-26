@@ -28,6 +28,7 @@ class Compartilhamento(models.Model):
         return "{}".format(self.agenda.tipo)
 
 class Convite(models.Model):
-    convidado = models.ManyToManyField(User, null=True, blank=False)
+    anfitriao = models.ForeignKey(User, null=True, blank=False)
+    convidado = models.ManyToManyField(User, null=True, blank=False, related_name='convidados')
     compromissos = models.ForeignKey(Compromisso, null=True, blank=False)
-    respostaConvite = models.CharField(max_length = 50)
+    aceitarConvite = models.BooleanField(default=True)
