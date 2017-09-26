@@ -30,4 +30,4 @@ class Compartilhamento(models.Model):
 class Convite(models.Model):
     convidado = models.ManyToManyField(User, null=True, blank=False)
     compromissos = models.ForeignKey(Compromisso, null=True, blank=False)
-    resposta = models.CharField(max_length = 50)
+    respostaConvite = models.CharField(max_length = 50)
